@@ -7,7 +7,6 @@
 .app__skills-container {
   width: 80%;
   margin-top: 3rem;
-
   display: flex;
   flex-direction: row;
 
@@ -103,10 +102,11 @@
 }
 
 .app__skills-exp-works {
-  flex: 1;
+  flex: 2;
 
   .app__skills-exp-work {
     display: flex;
+    flex:1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -127,6 +127,7 @@
 
 .app__skills-exp-year {
   margin-right: 3rem;
+  flex:1;
 
   p {
     font-weight: 800;
