@@ -38,9 +38,9 @@ const Skills = () => {
             >
               <div
                 className="app__flex"
-                style={{ backgroundColor: skill.bgColor }}
+                style={{ backgroundColor: "#edf2f8" }}
               >
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+                <img src={urlFor(skill.icon)} alt={skill.name} style={{borderRadius:50}}/>
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>

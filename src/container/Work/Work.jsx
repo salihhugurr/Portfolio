@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { AiFillEye, AiFillGithub,AiFillSecurityScan } from 'react-icons/ai';
 import { FaGooglePlay,FaAppStore } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -17,6 +17,7 @@ const Work = () => {
     const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
+      console.log("data",data);
       setWorks(data);
       setFilterWork(data);
     });
@@ -42,7 +43,7 @@ const Work = () => {
       <h2 className="head-text">My <span>Works</span></h2>
 
       <div className="app__work-filter">
-        {['UI/UX','Mobile App','React JS','All'].map((item, index) => (
+        {['UI/UX','Mobile App','Web App','TypeScript','AI','All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -96,6 +97,19 @@ const Work = () => {
                     </motion.div>
                   </a>
                   </>
+                }
+                {
+                  work.projectLink &&
+                  <a href={work.projectLink} target="_blank" rel="noreferrer">
+                  <motion.div
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.90] }}
+                    transition={{ duration: 0.25 }}
+                    className="app__flex"
+                  >
+                    <AiFillSecurityScan />
+                  </motion.div>
+                </a>
                 }
                 {
                   work.codeLink &&
